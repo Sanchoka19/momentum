@@ -1,0 +1,42 @@
+@use "./import";
+
+@font-face {
+    font-family: bold-fredoka;
+    src: url("../fonts/fredoka/static/Fredoka-Bold.ttf");
+}
+
+@font-face {
+    font-family: bold-firago;
+    src: url("../fonts/firago/Download_Folder_FiraGO_1001/Fonts/FiraGO_OTF_1001/Italic/FiraGO-BoldItalic.otf");
+}
+
+@font-face {
+    font-family: light-firago;
+    src: url("../fonts/firago/Download_Folder_FiraGO_1001/Fonts/FiraGO_OTF_1001/Roman/FiraGO-Regular.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a,
+li,
+button {
+    cursor: pointer;
+}

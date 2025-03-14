@@ -1,0 +1,168 @@
+@import "../components/variables";
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 120px;
+    border-bottom: .3px dashed $lightPurple;
+
+    span {
+        a {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 31px;
+            font-family: bold-fredoka;
+            color: $solidPurple;
+            font-weight: 400;
+
+            &:hover img {
+                animation: roleRound .9s ease;
+            }
+
+            @keyframes roleRound {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    >div {
+        display: flex;
+        gap: 40px;
+
+        button {
+            border: 1px solid $solidPurple;
+            padding: 10px 20px;
+            font-family: light-firago;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: $normTransition;
+
+            &:hover {
+                background-color: #513d3d72;
+            }
+
+            &:active {
+                background-color: #fff;
+            }
+        }
+
+        #create-task {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background-color: $solidPurple;
+            color: $whiteTextColor;
+
+            &:hover img {
+                animation: role .6s ease;
+            }
+
+            @keyframes role {
+                from {
+                    transform: rotate(180deg);
+                }
+
+                to {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+
+    }
+}
+
+.container-1 {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 60px;
+        padding: 40px 120px;
+        width: 100%;
+
+        h1 {
+            font-size: 34px;
+            font-weight: 600;
+        }
+
+        font-family: light-firago;
+
+
+        .filter {
+            height: 330px;
+            position: relative;
+
+            .active-purple {
+                color: $solidPurple;
+            }
+
+            ul {
+                display: flex;
+                align-items: flex-start;
+                gap: 23px;
+                border: 1px solid #DEE2E6;
+                border-radius: 10px;
+                padding: 13px 18px;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-family: light-firago;
+
+                    &:focus {
+                        color: $solidPurple;
+                    }
+                }
+            }
+
+            &-category {
+                position: absolute;
+                top: 55px;
+                display: flex;
+                flex-direction: column;
+                width: 688px;
+                gap: 25px;
+                padding: 40px 30px;
+                border: 1px solid red;
+                align-items: flex-start;
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 34px;
+                    border: none;
+                }
+
+                button {
+                    align-self: flex-end;
+                    padding: 8px 50px;
+                    background-color: $solidPurple;
+                    color: $whiteTextColor;
+                    border-radius: 20px;
+
+                    transition: $normTransition;
+
+                    &:active {
+                        background-color: #fff;
+                        color: $mainTextColor;
+                    }
+                }
+            }
+        }
+    }
+}
