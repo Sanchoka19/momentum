@@ -7,6 +7,9 @@ clickableElem.forEach(item => {
     item.addEventListener("click", (event) => {
         // Prevent the document-wide click event from triggering
         event.stopPropagation();
+        let navId = event.target.id;
+
+        let swithdNav = navId == 1 ? "departments" : navId == 2 ? "priorities" : "employees";
 
         clickableElem.forEach(elem => {
             elem.classList.remove("active-purple");
@@ -16,16 +19,32 @@ clickableElem.forEach(item => {
         item.classList.add("active-purple");
         item.style.color = "purple"; // Example color when active
 
-        fetch("https://momentum.redberryinternship.ge/api/departments")
+        let token = "9e6e9cdd-b866-4d38-b10b-561a35fa37a1";
+
+        fetch(`https://momentum.redberryinternship.ge/api/${swithdNav}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        })
             .then(rez => rez.json())
             .then(json => {
                 conForLi.innerHTML = "";
 
                 json.forEach(item => {
                     let newLi = document.createElement("li");
+                    // let checkBox = document.createElement("input")
+                    // checkBox.type = "checkbox";
+                    // newLi.appendChild(checkBox);
                     newLi.textContent = item.name;
                     conForLi.appendChild(newLi);
                 });
+                let chooseBtn = document.createElement("button");
+                chooseBtn.className = "choose"
+
+                chooseBtn.textContent = "არჩევა";
+
+                conForLi.appendChild(chooseBtn);
 
                 conForLi.style.display = "flex";
                 conForLi.style.position = "absolute";
